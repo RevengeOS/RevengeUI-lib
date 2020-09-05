@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme strings -->
+    <string name="menu_theme">Select theme</string>
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="based_on_system">Based on system</string>
+    <string name="based_on_battery">Based on battery saver</string>
+</resources>

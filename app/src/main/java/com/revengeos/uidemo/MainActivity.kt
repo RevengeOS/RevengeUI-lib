@@ -1,16 +1,20 @@
 package com.revengeos.uidemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.view.*
+import androidx.appcompat.app.AppCompatActivity
+import com.revengeos.revengeui.utils.ThemeUtils
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ThemeUtils.setThemeMode(ThemeUtils.getThemeModeValue(this));
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(home_toolbar)
+        home_toolbar.inflateMenu(R.menu.toolbar_menu);
 
         val pagerAdapter = DemoFragmentsPager(supportFragmentManager)
         demo_pager.adapter = pagerAdapter
@@ -22,6 +26,20 @@ class MainActivity : AppCompatActivity() {
             bottom_nav.setPadding(0, 0, 0, insets.systemWindowInsetBottom)
             insets.consumeSystemWindowInsets()
         }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_theme -> {
+                ThemeUtils.showThemeDialog(this)
+                super.onOptionsItemSelected(item)
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
