@@ -1,0 +1,34 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:name="vector"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <group
+        android:name="thumb_unpressed"
+        android:translateX="16"
+        android:translateY="16">
+        <path
+            android:pathData="M 0 -11 C 6.076 -11 11 -6.076 11 0 C 11 6.076 6.076 11 0 11 C -6.076 11 -11 6.076 -11 0 C -11 -6.076 -6.076 -11 0 -11 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:centerX="0"
+                    android:centerY="0.75"
+                    android:gradientRadius="11"
+                    android:type="radial">
+                    <item
+                        android:color="#000"
+                        android:offset="0.1" />
+                    <item
+                        android:color="#00000000"
+                        android:offset="0.9" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:pathData="M 0 -8 C 4.419 -8 8 -4.419 8 0 C 8 4.419 4.419 8 0 8 C -4.419 8 -8 4.419 -8 0 C -8 -4.419 -4.419 -8 0 -8 Z"
+            android:fillColor="#ffffff"/>
+    </group>
+</vector>

@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
+    <group android:name="thumb">
+        <path android:pathData="M 22,11 A 11,11 0 0 1 11,22 11,11 0 0 1 0,11 11,11 0 0 1 11,0 11,11 0 0 1 22,11 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:centerX="11"
+                    android:centerY="11.75"
+                    android:gradientRadius="11"
+                    android:type="radial">
+                    <item
+                        android:color="#000"
+                        android:offset="0.1" />
+                    <item
+                        android:color="#00000000"
+                        android:offset="0.9" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:pathData="m19,11a8,8 0,0 1,-8 8,8 8,0 0,1 -8,-8 8,8 0,0 1,8 -8,8 8,0 0,1 8,8z"
+            android:fillColor="#ffffff" />
+    </group>
+</vector>

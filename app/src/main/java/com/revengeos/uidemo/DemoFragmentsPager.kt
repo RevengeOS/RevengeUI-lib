@@ -11,6 +11,7 @@ class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapte
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> ButtonsDemoFragment()
+            1 -> SlidersDemoFragment()
             else -> {
                 return ButtonsDemoFragment()
             }
@@ -18,12 +19,13 @@ class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapte
     }
 
     override fun getCount(): Int {
-        return 1;
+        return 2;
     }
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
             0 -> "Buttons"
+            1 -> "Sliders"
             else -> {
                 return "Buttons"
             }

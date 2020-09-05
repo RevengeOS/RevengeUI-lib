@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Revenge V2" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:splitTrack="false"
+            android:thumb="@drawable/ic_thumb_v1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Revenge V2 animated" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:splitTrack="false"
+            android:background="@null"
+            android:thumb="@drawable/ic_thumb_v2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="System theme" />
+
+        <SeekBar
+            android:id="@+id/seekBar3"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.DeviceDefault.SeekBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Material Components Slider"
+            android:layout_marginTop="20dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:haloColor="@android:color/transparent"
+            app:labelBehavior="gone"
+            app:thumbRadius="8dp"
+            app:thumbColor="@android:color/white"
+            app:thumbElevation="3dp"
+            app:trackHeight="3dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+    </LinearLayout>
+
+</FrameLayout>
