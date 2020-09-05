@@ -1,2 +1,3 @@
+include ':revengeui'
 include ':app'
 rootProject.name = "UI Demo"
