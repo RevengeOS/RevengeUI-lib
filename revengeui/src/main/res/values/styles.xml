@@ -3,11 +3,33 @@
     <style name="RootTheme.RevengeUI.DayNight" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:navigationBarColor">@android:color/black</item>
         <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>
+        <item name="seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>
     </style>
     <style name="BaseTheme.RevengeUI.DayNight" parent="RootTheme.RevengeUI.DayNight">
         <item name="android:windowBackground">@color/revengeui_background_light</item>
     </style>
 
     <style name="Theme.RevengeUI.DayNight" parent="BaseTheme.RevengeUI.DayNight">
+    </style>
+
+    <style name="Widget.RevengeUI.SeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="background">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:thumb">@drawable/revengeui_seekbar_thumb</item>
+        <item name="android:splitTrack">false</item>
+        <item name="splitTrack">false</item>
+    </style>
+
+    <style name="Widget.RevengeUI.SeekBar.NotAnimated" parent="Widget.RevengeUI.SeekBar">
+        <item name="android:thumb">@drawable/revengeui_seekbar_thumb_unpressed</item>
+    </style>
+
+    <style name="Widget.RevengeUI.SeekBar.Discrete" parent="Widget.AppCompat.SeekBar.Discrete">
+        <item name="background">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:thumb">@drawable/revengeui_seekbar_thumb</item>
+        <item name="android:splitTrack">false</item>
+        <item name="splitTrack">false</item>
     </style>
 </resources>

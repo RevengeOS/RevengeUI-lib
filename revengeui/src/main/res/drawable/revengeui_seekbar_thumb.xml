@@ -35,15 +35,15 @@
     <item
         android:id="@+id/pressed"
         android:state_pressed="true"
-        android:drawable="@drawable/ic_thumb_pressed_v2" />
+        android:drawable="@drawable/revengeui_seekbar_thumb_pressed" />
     <item
         android:id="@+id/unpressed"
-        android:drawable="@drawable/ic_thumb_unpressed_v2" />
+        android:drawable="@drawable/revengeui_seekbar_thumb_unpressed" />
     <transition
         android:fromId="@+id/unpressed"
         android:toId="@+id/pressed">
         <animated-vector
-            android:drawable="@drawable/ic_thumb_unpressed_v2" >
+            android:drawable="@drawable/revengeui_seekbar_thumb_unpressed" >
             <target android:name="thumb_unpressed">
                 <aapt:attr name="android:animation">
                     <set>
@@ -70,7 +70,7 @@
         android:fromId="@+id/pressed"
         android:toId="@+id/unpressed">
         <animated-vector
-            android:drawable="@drawable/ic_thumb_pressed_v2" >
+            android:drawable="@drawable/revengeui_seekbar_thumb_pressed" >
             <target android:name="thumb_pressed">
                 <aapt:attr name="android:animation">
                     <set>
