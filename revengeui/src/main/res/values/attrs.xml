@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="RevengeUIButton">
+        <attr name="springEffect" format="boolean" />
+    </declare-styleable>
+</resources>

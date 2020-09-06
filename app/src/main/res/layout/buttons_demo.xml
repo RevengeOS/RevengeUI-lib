@@ -7,11 +7,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:clipToPadding="false">
 
-        <Button
+        <com.revengeos.revengeui.button.RevengeUIButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:elevation="10dp"
             android:text="Material style" />
     </LinearLayout>
 
