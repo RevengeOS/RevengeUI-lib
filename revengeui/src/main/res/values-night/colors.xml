@@ -5,4 +5,6 @@
     <color name="revengeui_color_primary">@color/revengeui_color_primary_dark</color>
     <color name="revengeui_color_primaryDark">@color/revengeui_color_primaryDark_dark</color>
     <color name="revengeui_color_accent">@color/revengeui_color_accent_dark</color>
+    <color name="revengeui_color_gradient_start">@color/revengeui_color_gradient_start_dark</color>
+    <color name="revengeui_color_gradient_end">@color/revengeui_color_gradient_end_dark</color>
 </resources>

@@ -10,6 +10,8 @@
         <item name="android:windowBackground">@color/revengeui_background</item>
         <item name="android:colorBackgroundFloating">@color/revengeui_background_floating</item>
         <item name="colorBackgroundFloating">@color/revengeui_background_floating</item>
+        <item name="colorGradientStart">@color/revengeui_color_gradient_start</item>
+        <item name="colorGradientEnd">@color/revengeui_color_gradient_end</item>
         <!-- Item's styles -->
         <item name="buttonStyle">@style/Widget.RevengeUI.Button</item>
         <item name="android:buttonStyle">@style/Widget.RevengeUI.Button</item>
