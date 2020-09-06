@@ -2,6 +2,8 @@
 <resources>
     <style name="BaseTheme.RevengeUI.DayNight" parent="RootTheme.RevengeUI.DayNight">
         <item name="android:windowBackground">@color/revengeui_background_dark</item>
+        <item name="android:colorBackgroundFloating">@color/revengeui_background_floating_dark</item>
+        <item name="colorBackgroundFloating">@color/revengeui_background_floating_dark</item>
     </style>
 
     <style name="Theme.RevengeUI.DayNight" parent="BaseTheme.RevengeUI.DayNight">

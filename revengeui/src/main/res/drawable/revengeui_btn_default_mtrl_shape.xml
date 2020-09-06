@@ -18,7 +18,7 @@
        android:insetBottom="@dimen/abc_button_inset_vertical_material">
     <shape android:shape="rectangle">
         <corners android:radius="@dimen/revengeui_control_corner" />
-        <solid android:color="@android:color/white" />
+        <solid android:color="?colorBackgroundFloating" />
         <padding android:left="@dimen/revengeui_button_padding_horizontal"
                  android:top="@dimen/abc_button_padding_vertical_material"
                  android:right="@dimen/revengeui_button_padding_horizontal"

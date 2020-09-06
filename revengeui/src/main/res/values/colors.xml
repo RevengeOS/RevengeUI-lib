@@ -2,4 +2,6 @@
 <resources>
     <color name="revengeui_background_light">#ffffff</color>
     <color name="revengeui_background_dark">#060606</color>
+    <color name="revengeui_background_floating_light">#ffffff</color>
+    <color name="revengeui_background_floating_dark">#2a2a2a</color>
 </resources>
