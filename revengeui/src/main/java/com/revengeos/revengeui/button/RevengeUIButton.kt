@@ -19,9 +19,9 @@ class RevengeUIButton : AppCompatButton {
 
     private companion object Params {
         const val INITIAL_SCALE = 1f
-        const val STIFFNESS = 300f
-        const val DAMPING_RATIO = 0.25f
-        const val LONG_PRESS_TIMEOUT = 175L
+        const val STIFFNESS = 400f
+        const val DAMPING_RATIO = 0.27f
+        const val LONG_PRESS_TIMEOUT = 115L
     }
 
     private val scaleXAnimation = createSpringAnimation(
