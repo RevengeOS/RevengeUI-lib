@@ -10,19 +10,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:clipToPadding="false">
+        android:gravity="center">
 
         <com.revengeos.revengeui.button.RevengeUIButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="10dp"
-            android:text="Material style" />
+            android:text="Revenge standard" />
 
         <com.revengeos.revengeui.button.RevengeUIButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="10dp"
-            android:text="Material style"
+            android:text="Revenge colored"
             style="@style/Widget.RevengeUI.Button.Colored"/>
     </LinearLayout>
 
