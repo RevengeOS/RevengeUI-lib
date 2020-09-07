@@ -19,7 +19,7 @@ class RevengeUIButton : AppCompatButton {
 
     private companion object Params {
         const val INITIAL_SCALE = 1f
-        const val STIFFNESS = SpringForce.STIFFNESS_MEDIUM
+        const val STIFFNESS = 300f
         const val DAMPING_RATIO = 0.25f
     }
 
