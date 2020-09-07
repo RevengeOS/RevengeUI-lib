@@ -21,6 +21,7 @@ class RevengeUIButton : AppCompatButton {
         const val INITIAL_SCALE = 1f
         const val STIFFNESS = 300f
         const val DAMPING_RATIO = 0.25f
+        const val LONG_PRESS_TIMEOUT = 175L
     }
 
     private val scaleXAnimation = createSpringAnimation(
@@ -42,6 +43,18 @@ class RevengeUIButton : AppCompatButton {
 
     private var mUseSpringEffect = false
     private var mIsPressed = false
+    private var mLongPressed = false
+
+    private val longPressListener = Runnable {
+        if (mIsPressed) {
+            mLongPressed = true
+        }
+        if (!mIsPressed && !mLongPressed) {
+            clearAnimations()
+            scaleXAnimation.start()
+            scaleYAnimation.start()
+        }
+    }
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, R.attr.buttonStyle)
@@ -67,14 +80,19 @@ class RevengeUIButton : AppCompatButton {
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (event != null && mUseSpringEffect) {
             if (event.action == MotionEvent.ACTION_DOWN && !mIsPressed) {
+                handler.removeCallbacks(longPressListener)
+                handler.postDelayed(longPressListener, LONG_PRESS_TIMEOUT)
                 clearAnimations()
                 animatorX.start()
                 animatorY.start()
                 mIsPressed = true
             } else if (event.action == MotionEvent.ACTION_UP && mIsPressed) {
-                clearAnimations()
-                scaleXAnimation.start()
-                scaleYAnimation.start()
+                if (mLongPressed) {
+                    clearAnimations()
+                    scaleXAnimation.start()
+                    scaleYAnimation.start()
+                    mLongPressed = false
+                }
                 mIsPressed = false
             }
         }
