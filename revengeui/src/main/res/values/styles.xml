@@ -4,16 +4,12 @@
         <item name="textAllCaps">false</item>
         <item name="android:background">@drawable/revengeui_btn_default_mtrl_shape</item>
         <item name="android:stateListAnimator">@null</item>
-        <item name="android:elevation">5dp</item>
+        <item name="android:elevation">8dp</item>
         <item name="springEffect">true</item>
     </style>
 
     <style name="Widget.RevengeUI.Button.Colored" parent="Widget.RevengeUI.Button">
-        <item name="textAllCaps">false</item>
         <item name="android:background">@drawable/revengeui_btn_colored</item>
-        <item name="android:stateListAnimator">@null</item>
-        <item name="android:elevation">5dp</item>
-        <item name="springEffect">true</item>
     </style>
 
     <style name="Widget.RevengeUI.SeekBar" parent="Widget.AppCompat.SeekBar">

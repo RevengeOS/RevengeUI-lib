@@ -15,15 +15,15 @@
         <com.revengeos.revengeui.button.RevengeUIButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="10dp"
             android:text="Revenge standard" />
 
         <com.revengeos.revengeui.button.RevengeUIButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="10dp"
             android:text="Revenge colored"
             style="@style/Widget.RevengeUI.Button.Colored"/>
+
+
     </LinearLayout>
 
 </FrameLayout>
