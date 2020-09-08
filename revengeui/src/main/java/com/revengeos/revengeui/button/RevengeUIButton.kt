@@ -86,7 +86,9 @@ class RevengeUIButton : AppCompatButton {
                 animatorX.start()
                 animatorY.start()
                 mIsPressed = true
-            } else if (event.action == MotionEvent.ACTION_UP && mIsPressed) {
+            } else if ((event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL)
+                && mIsPressed
+            ) {
                 if (mLongPressed) {
                     clearAnimations()
                     scaleXAnimation.start()
