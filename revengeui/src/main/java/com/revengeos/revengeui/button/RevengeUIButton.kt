@@ -1,60 +1,19 @@
 package com.revengeos.revengeui.button
 
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.util.AttributeSet
-import android.view.MotionEvent
-import android.view.View
 import androidx.appcompat.widget.AppCompatButton
-import androidx.dynamicanimation.animation.DynamicAnimation
-import androidx.dynamicanimation.animation.SpringAnimation
-import androidx.dynamicanimation.animation.SpringForce
 
 import com.revengeos.revengeui.R
+import com.revengeos.revengeui.effect.SpringEffectProvider
 
 /**
  * TODO: document your custom view class.
  */
 class RevengeUIButton : AppCompatButton {
 
-    private companion object Params {
-        const val INITIAL_SCALE = 1f
-        const val STIFFNESS = 400f
-        const val DAMPING_RATIO = 0.27f
-        const val LONG_PRESS_TIMEOUT = 115L
-    }
-
-    private val scaleXAnimation = createSpringAnimation(
-        this,
-        SpringAnimation.SCALE_X,
-        INITIAL_SCALE,
-        STIFFNESS,
-        DAMPING_RATIO
-    )
-    private val scaleYAnimation = createSpringAnimation(
-        this,
-        SpringAnimation.SCALE_Y,
-        INITIAL_SCALE,
-        STIFFNESS,
-        DAMPING_RATIO
-    )
-    private val animatorX = ObjectAnimator.ofFloat(this, "scaleX", 1.0f, 0.9f)
-    private val animatorY = ObjectAnimator.ofFloat(this, "scaleY", 1.0f, 0.9f)
-
     private var mUseSpringEffect = false
-    private var mIsPressed = false
-    private var mLongPressed = false
-
-    private val longPressListener = Runnable {
-        if (mIsPressed) {
-            mLongPressed = true
-        }
-        if (!mIsPressed && !mLongPressed) {
-            clearAnimations()
-            scaleXAnimation.start()
-            scaleYAnimation.start()
-        }
-    }
+    private var springEffectProvider : SpringEffectProvider
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, R.attr.buttonStyle)
@@ -63,6 +22,7 @@ class RevengeUIButton : AppCompatButton {
         attrs,
         defStyleAttr
     ) {
+        springEffectProvider = SpringEffectProvider(this)
         val typedArray = context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.RevengeUIButton,
@@ -72,60 +32,22 @@ class RevengeUIButton : AppCompatButton {
         try {
             mUseSpringEffect =
                 typedArray.getBoolean(R.styleable.RevengeUIButton_springEffect, false)
+            if (mUseSpringEffect) {
+                springEffectProvider.addSpringEffect()
+            }
         } finally {
             typedArray.recycle()
         }
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        if (event != null && mUseSpringEffect) {
-            if (event.action == MotionEvent.ACTION_DOWN && !mIsPressed) {
-                handler.removeCallbacks(longPressListener)
-                handler.postDelayed(longPressListener, LONG_PRESS_TIMEOUT)
-                clearAnimations()
-                animatorX.start()
-                animatorY.start()
-                mIsPressed = true
-            } else if ((event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL)
-                && mIsPressed
-            ) {
-                if (mLongPressed) {
-                    clearAnimations()
-                    scaleXAnimation.start()
-                    scaleYAnimation.start()
-                    mLongPressed = false
-                }
-                mIsPressed = false
-            }
-        }
-        return super.onTouchEvent(event)
-    }
-
     fun setUseSpringEffect(value: Boolean) {
-        clearAnimations()
-        mUseSpringEffect = value
+        if (mUseSpringEffect != value) {
+            if (value) {
+                springEffectProvider.addSpringEffect()
+            } else {
+                springEffectProvider.removeSpringEffect()
+            }
+            mUseSpringEffect = value
+        }
     }
-
-    private fun clearAnimations() {
-        animatorY.cancel()
-        animatorX.cancel()
-        scaleXAnimation.cancel()
-        scaleYAnimation.cancel()
-    }
-
-    private fun createSpringAnimation(
-        view: View,
-        property: DynamicAnimation.ViewProperty,
-        finalPosition: Float,
-        stiffness: Float,
-        dampingRatio: Float
-    ): SpringAnimation {
-        val animation = SpringAnimation(view, property)
-        val spring = SpringForce(finalPosition)
-        spring.stiffness = stiffness
-        spring.dampingRatio = dampingRatio
-        animation.spring = spring
-        return animation
-    }
-
 }
