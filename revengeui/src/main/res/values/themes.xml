@@ -13,6 +13,7 @@
         <item name="colorGradientStart">@color/revengeui_color_gradient_start</item>
         <item name="colorGradientEnd">@color/revengeui_color_gradient_end</item>
         <!-- Item's styles -->
+        <item name="android:textAppearanceButton">@style/TextAppearance.RevengeUI.Button</item>
         <item name="buttonStyle">@style/Widget.RevengeUI.Button</item>
         <item name="android:buttonStyle">@style/Widget.RevengeUI.Button</item>
         <item name="android:seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Fonts -->
+    <dimen name="revengeui_text_size_button">16sp</dimen>
+    <!-- Spacing and corners -->
     <dimen name="revengeui_control_corner">16dp</dimen>
     <dimen name="revengeui_control_elevation">10dp</dimen>
     <dimen name="revengeui_button_padding_horizontal">12dp</dimen>
