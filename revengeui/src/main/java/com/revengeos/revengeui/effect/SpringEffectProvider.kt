@@ -36,13 +36,25 @@ class SpringEffectProvider {
         }
     }
 
-    private lateinit var view: View
+    private lateinit var listenView: View
+    private lateinit var animateView: View
 
     constructor(view: View) {
-        this.view = view
+        listenView = view
+        animateView = view
+    }
 
+    public fun setViewToAnimate(view : View) {
+        animateView = view
+        createAnimations()
+    }
+
+    public fun createAnimations() {
+        if (this::animatorX.isInitialized) {
+            clearAnimations()
+        }
         scaleXAnimation = createSpringAnimation(
-            view,
+            animateView,
             SpringAnimation.SCALE_X,
             INITIAL_SCALE,
             STIFFNESS,
@@ -50,20 +62,20 @@ class SpringEffectProvider {
         )
 
         scaleYAnimation = createSpringAnimation(
-            view,
+            animateView,
             SpringAnimation.SCALE_Y,
             INITIAL_SCALE,
             STIFFNESS,
             DAMPING_RATIO
         )
 
-        animatorX = ObjectAnimator.ofFloat(view, "scaleX", 1.0f, 0.9f)
-        animatorY = ObjectAnimator.ofFloat(view, "scaleY", 1.0f, 0.9f)
+        animatorX = ObjectAnimator.ofFloat(animateView, "scaleX", 1.0f, 0.9f)
+        animatorY = ObjectAnimator.ofFloat(animateView, "scaleY", 1.0f, 0.9f)
     }
 
     public fun addSpringEffect() {
-        clearAnimations()
-        view.setOnTouchListener(object : View.OnTouchListener {
+        createAnimations()
+        listenView.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(view: View?, event: MotionEvent?): Boolean {
                 if (event != null && view != null) {
                     if (event.action == MotionEvent.ACTION_DOWN && !mIsPressed) {
@@ -89,7 +101,7 @@ class SpringEffectProvider {
     }
 
     public fun removeSpringEffect() {
-        view.setOnTouchListener(null)
+        listenView.setOnTouchListener(null)
         clearAnimations()
     }
 
