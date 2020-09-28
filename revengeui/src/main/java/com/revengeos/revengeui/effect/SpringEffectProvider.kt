@@ -24,6 +24,7 @@ class SpringEffectProvider {
 
     private var mIsPressed = false
     private var mLongPressed = false
+    private var mIgnoreTouch = false
 
     private val longPressListener = Runnable {
         if (mIsPressed) {
@@ -77,7 +78,7 @@ class SpringEffectProvider {
         createAnimations()
         listenView.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(view: View?, event: MotionEvent?): Boolean {
-                if (event != null && view != null) {
+                if (!mIgnoreTouch && event != null && view != null) {
                     if (event.action == MotionEvent.ACTION_DOWN && !mIsPressed) {
                         view.handler.removeCallbacks(longPressListener)
                         view.handler.postDelayed(longPressListener, LONG_PRESS_TIMEOUT)
@@ -98,6 +99,10 @@ class SpringEffectProvider {
                 return view?.onTouchEvent(event) ?: true
             }
         })
+    }
+
+    public fun setIgnoreTouch(value : Boolean) {
+        mIgnoreTouch = value
     }
 
     public fun removeSpringEffect() {
