@@ -75,7 +75,9 @@ class SpringEffectProvider {
     }
 
     public fun addSpringEffect() {
-        createAnimations()
+        if (!this::animatorX.isInitialized) {
+            createAnimations()
+        }
         listenView.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(view: View?, event: MotionEvent?): Boolean {
                 if (!mIgnoreTouch && event != null && view != null) {
