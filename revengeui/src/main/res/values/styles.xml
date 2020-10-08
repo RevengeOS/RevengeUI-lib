@@ -2,7 +2,6 @@
 <resources>
     <style name="TextAppearance.RevengeUI.Button" parent="TextAppearance.AppCompat.Button">
         <item name="android:textSize">@dimen/revengeui_text_size_button</item>
-        <item name="android:fontFamily">@font/manrope_semibold</item>
         <item name="android:textAllCaps">false</item>
 
     </style>
