@@ -18,6 +18,8 @@
         <item name="android:buttonStyle">@style/Widget.RevengeUI.Button</item>
         <item name="android:seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>
         <item name="seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>
+        <item name="switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
+        <item name="android:switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
     </style>
 
     <style name="Theme.RevengeUI.DayNight" parent="BaseTheme.RevengeUI.DayNight">

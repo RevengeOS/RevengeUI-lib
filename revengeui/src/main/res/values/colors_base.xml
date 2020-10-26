@@ -8,6 +8,8 @@
     <color name="revengeui_color_primary_dark">@color/revengeui_background_dark</color>
     <color name="revengeui_color_primaryDark_light">@color/revengeui_background_light</color>
     <color name="revengeui_color_primaryDark_dark">@color/revengeui_background_dark</color>
+    <color name="revengeui_color_switch_background_light">#5d888888</color>
+    <color name="revengeui_color_switch_background_dark">#5f898989</color>
     <color name="revengeui_color_accent_light">#058fff</color>
     <color name="revengeui_color_accent_dark">#058fff</color>
     <color name="revengeui_color_gradient_start_light">#058fff</color>
