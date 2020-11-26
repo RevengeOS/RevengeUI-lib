@@ -42,4 +42,27 @@
         <item name="android:background">@null</item>
         <item name="android:showText">false</item>
     </style>
+
+    <style name="Base.Widget.RevengeUI.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextStyle">@style/TextAppearance.Widget.RevengeUI.Toolbar.Title</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Widget.RevengeUI.Toolbar.Subtitle</item>
+        <item name="popupTheme">@style/ThemeOverlay.RevengeUI.DayNight.ActionBar</item>
+        <item name="android:background">?android:windowBackground</item>
+    </style>
+
+    <style name="Widget.RevengeUI.Toolbar" parent="Base.Widget.RevengeUI.Toolbar">
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="TextAppearance.Widget.RevengeUI.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    </style>
+
+    <style name="TextAppearance.Widget.RevengeUI.Toolbar.Subtitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">@dimen/revengeui_text_size_title_toolbar</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="ThemeOverlay.RevengeUI.DayNight.ActionBar" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
+    </style>
+
 </resources>

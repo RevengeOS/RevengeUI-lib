@@ -6,4 +6,8 @@
     <dimen name="revengeui_control_corner">16dp</dimen>
     <dimen name="revengeui_control_elevation">10dp</dimen>
     <dimen name="revengeui_button_padding_horizontal">12dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="revengeui_action_bar_size">92dp</dimen>
+    <dimen name="revengeui_text_size_title_toolbar">35dp</dimen>
 </resources>

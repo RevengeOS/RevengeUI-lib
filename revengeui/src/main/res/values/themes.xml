@@ -20,6 +20,10 @@
         <item name="seekBarStyle">@style/Widget.RevengeUI.SeekBar</item>
         <item name="switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
         <item name="android:switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
+        <item name="toolbarStyle">@style/Widget.RevengeUI.Toolbar</item>
+
+        <!-- Sizes -->
+        <item name="actionBarSize">@dimen/revengeui_action_bar_size</item>
     </style>
 
     <style name="Theme.RevengeUI.DayNight" parent="BaseTheme.RevengeUI.DayNight">
