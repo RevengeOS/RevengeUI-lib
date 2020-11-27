@@ -58,11 +58,30 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <style name="TextAppearance.Widget.RevengeUI.Toolbar.Title.Expanded" parent="TextAppearance.Widget.RevengeUI.Toolbar.Title">
+        <item name="android:textSize">@dimen/revengeui_text_size_title_toolbar_expanded</item>
+    </style>
+
     <style name="ThemeOverlay.RevengeUI.DayNight.ActionBar" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
     </style>
 
     <style name="Theme.RevengeUI.Dialog.Fullscreen" parent="Theme.RevengeUI.DayNight">
         <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+    </style>
+
+    <style name="Widget.RevengeUI.AppBarLayout" parent="Widget.Design.AppBarLayout">
+        <item name="layout_behavior">com.revengeos.revengeui.appbar.FixedAppBarLayoutBehavior</item>
+    </style>
+
+    <style name="Widget.RevengeUI.CollapsingToolbar" parent="Widget.Design.CollapsingToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/revengeui_action_bar_size_expanded</item>
+        <item name="expandedTitleGravity">bottom</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Widget.RevengeUI.Toolbar.Title.Expanded</item>
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Widget.RevengeUI.Toolbar.Title</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed</item>
+        <item name="expandedTitleMarginStart">@dimen/revengeui_action_bar_expanded_title_margin_start</item>
+        <item name="expandedTitleMarginBottom">@dimen/revengeui_action_bar_expanded_title_margin_bottom</item>
     </style>
 
 </resources>

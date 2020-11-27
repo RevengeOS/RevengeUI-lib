@@ -8,6 +8,10 @@
     <dimen name="revengeui_button_padding_horizontal">12dp</dimen>
 
     <!-- Toolbar -->
-    <dimen name="revengeui_action_bar_size">92dp</dimen>
-    <dimen name="revengeui_text_size_title_toolbar">35dp</dimen>
+    <dimen name="revengeui_action_bar_size">56dp</dimen>
+    <dimen name="revengeui_action_bar_size_expanded">140dp</dimen>
+    <dimen name="revengeui_action_bar_expanded_title_margin_start">22dp</dimen>
+    <dimen name="revengeui_action_bar_expanded_title_margin_bottom">28dp</dimen>
+    <dimen name="revengeui_text_size_title_toolbar">21dp</dimen>
+    <dimen name="revengeui_text_size_title_toolbar_expanded">35dp</dimen>
 </resources>
