@@ -21,6 +21,7 @@ android_library {
     static_libs: [
         "androidx.appcompat_appcompat",
         "androidx.dynamicanimation_dynamicanimation",
+        "com.google.android.material_material",
     ],
     manifest: "AndroidManifest.xml",
     sdk_version: "current",
