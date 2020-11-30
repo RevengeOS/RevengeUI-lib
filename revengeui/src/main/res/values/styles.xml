@@ -65,8 +65,13 @@
     <style name="ThemeOverlay.RevengeUI.DayNight.ActionBar" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
     </style>
 
+    <style name="Animation.RevengeUI.Dialog.Fullscreen" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/activity_open_enter</item>
+        <item name="android:windowExitAnimation">@anim/activity_close_exit</item>
+    </style>
+
     <style name="Theme.RevengeUI.Dialog.Fullscreen" parent="Theme.RevengeUI.DayNight">
-        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+        <item name="android:windowAnimationStyle">@style/Animation.RevengeUI.Dialog.Fullscreen</item>
     </style>
 
     <style name="Widget.RevengeUI.AppBarLayout" parent="Widget.Design.AppBarLayout">
