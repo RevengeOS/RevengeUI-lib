@@ -21,6 +21,7 @@
         <item name="switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
         <item name="android:switchStyle">@style/Widget.RevengeUI.CompoundButton.Switch</item>
         <item name="toolbarStyle">@style/Widget.RevengeUI.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.RevengeUI.BottomNavigationView</item>
 
         <!-- Sizes -->
         <item name="actionBarSize">@dimen/revengeui_action_bar_size</item>

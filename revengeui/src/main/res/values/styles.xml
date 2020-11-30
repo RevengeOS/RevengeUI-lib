@@ -84,4 +84,10 @@
         <item name="expandedTitleMarginBottom">@dimen/revengeui_action_bar_expanded_title_margin_bottom</item>
     </style>
 
+    <style name="Widget.RevengeUI.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:background">?colorBackgroundFloating</item>
+        <item name="itemTextColor">@color/bottom_nav_item</item>
+        <item name="itemIconTint">@color/bottom_nav_item</item>
+    </style>
+
 </resources>
