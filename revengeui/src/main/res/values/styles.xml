@@ -55,7 +55,7 @@
 
     <style name="TextAppearance.Widget.RevengeUI.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">@dimen/revengeui_text_size_title_toolbar</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
     </style>
 
     <style name="TextAppearance.Widget.RevengeUI.Toolbar.Title.Expanded" parent="TextAppearance.Widget.RevengeUI.Toolbar.Title">
