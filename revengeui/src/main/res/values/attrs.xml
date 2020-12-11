@@ -1,6 +1,8 @@
 <resources>
     <attr name="colorGradientStart" format="color"/>
     <attr name="colorGradientEnd" format="color"/>
+    <attr name="colorBackgroundFloatingTranslucent" format="color"/>
+
     <declare-styleable name="RevengeUIButton">
         <attr name="springEffect" format="boolean" />
     </declare-styleable>

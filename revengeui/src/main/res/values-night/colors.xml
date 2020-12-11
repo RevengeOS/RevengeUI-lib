@@ -2,6 +2,7 @@
 <resources>
     <color name="revengeui_background">@color/revengeui_background_dark</color>
     <color name="revengeui_background_floating">@color/revengeui_background_floating_dark</color>
+    <color name="revengeui_background_floating_translucent">@color/revengeui_background_floating_translucent_dark</color>
     <color name="revengeui_color_primary">@color/revengeui_color_primary_dark</color>
     <color name="revengeui_color_primaryDark">@color/revengeui_color_primaryDark_dark</color>
     <color name="revengeui_color_switch_background">@color/revengeui_color_switch_background_dark</color>
