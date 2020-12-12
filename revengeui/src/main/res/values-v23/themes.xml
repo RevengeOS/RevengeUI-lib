@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.RevengeUI.DayNight" parent="BaseTheme.RevengeUI.DayNight">
+    <style name="Theme.RevengeUI.Light" parent="BaseTheme.RevengeUI.Light">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.RevengeUI.Dark" parent="BaseTheme.RevengeUI.Dark">
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

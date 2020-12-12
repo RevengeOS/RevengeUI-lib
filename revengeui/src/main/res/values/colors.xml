@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="revengeui_background">@color/revengeui_background_light</color>
-    <color name="revengeui_background_floating">@color/revengeui_background_floating_light</color>
-    <color name="revengeui_background_floating_translucent">@color/revengeui_background_floating_translucent_light</color>
-    <color name="revengeui_color_primary">@color/revengeui_color_primary_light</color>
-    <color name="revengeui_color_primaryDark">@color/revengeui_color_primaryDark_light</color>
-    <color name="revengeui_color_switch_background">@color/revengeui_color_switch_background_light</color>
-    <color name="revengeui_color_accent">@color/revengeui_color_accent_light</color>
-    <color name="revengeui_color_gradient_start">@color/revengeui_color_gradient_start_light</color>
-    <color name="revengeui_color_gradient_end">@color/revengeui_color_gradient_end_light</color>
+    <color name="revengeui_color_switch_background">#5d888888</color>
 </resources>
