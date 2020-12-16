@@ -6,4 +6,7 @@
     <string name="dark_theme">Dark</string>
     <string name="based_on_system">Based on system</string>
     <string name="based_on_battery">Based on battery saver</string>
+
+    <string name="accessibility_expand">Expand</string>
+    <string name="accessibility_collapse">Collapse</string>
 </resources>
