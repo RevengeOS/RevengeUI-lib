@@ -89,10 +89,17 @@
         <item name="expandedTitleMarginBottom">@dimen/revengeui_action_bar_expanded_title_margin_bottom</item>
     </style>
 
+    <style name="TextAppearance.Widget.RevengeUI.BottomNavigationView.Item" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+        <item name="android:textSize">13.5sp</item>
+    </style>
+
     <style name="Widget.RevengeUI.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
         <item name="android:background">?colorBackgroundFloating</item>
         <item name="itemTextColor">@color/bottom_nav_item</item>
         <item name="itemIconTint">@color/bottom_nav_item</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Widget.RevengeUI.BottomNavigationView.Item</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Widget.RevengeUI.BottomNavigationView.Item</item>
     </style>
 
 </resources>
