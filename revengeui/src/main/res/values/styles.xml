@@ -16,6 +16,11 @@
         <item name="android:background">@drawable/revengeui_btn_colored</item>
     </style>
 
+    <style name="Widget.RevengeUI.Button.Borderless" parent="Widget.RevengeUI.Button">
+        <item name="springEffect">false</item>
+        <item name="android:background">@drawable/revengeui_btn_borderless</item>
+    </style>
+
     <style name="Widget.RevengeUI.SeekBar" parent="Widget.AppCompat.SeekBar">
         <item name="background">@null</item>
         <item name="android:background">@null</item>
