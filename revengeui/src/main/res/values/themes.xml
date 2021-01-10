@@ -29,6 +29,7 @@
 
         <!-- Sizes -->
         <item name="actionBarSize">@dimen/revengeui_action_bar_size</item>
+        <item name="dialogCornerRadius">@dimen/revengeui_dialog_corner_radius</item>
     </style>
 
     <style name="BaseTheme.RevengeUI.Light" parent="Theme.AppCompat.Light.NoActionBar">
