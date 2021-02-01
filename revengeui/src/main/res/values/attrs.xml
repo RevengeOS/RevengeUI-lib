@@ -5,5 +5,6 @@
 
     <declare-styleable name="RevengeUIButton">
         <attr name="springEffect" format="boolean" />
+        <attr name="springEffectScale" format="float" />
     </declare-styleable>
 </resources>

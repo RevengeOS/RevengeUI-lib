@@ -13,6 +13,7 @@ import com.revengeos.revengeui.effect.SpringEffectProvider
 class RevengeUIButton : AppCompatButton {
 
     private var mUseSpringEffect = false
+    private var mSpringEffectScale = 1f
     private var springEffectProvider : SpringEffectProvider
 
     constructor(context: Context) : this(context, null)
@@ -30,6 +31,8 @@ class RevengeUIButton : AppCompatButton {
         )
 
         try {
+            mSpringEffectScale = typedArray.getFloat(R.styleable.RevengeUIButton_springEffectScale, 0.9f)
+            springEffectProvider.updateSpringScale(mSpringEffectScale)
             mUseSpringEffect =
                 typedArray.getBoolean(R.styleable.RevengeUIButton_springEffect, false)
             if (mUseSpringEffect) {
@@ -49,5 +52,10 @@ class RevengeUIButton : AppCompatButton {
             }
             mUseSpringEffect = value
         }
+    }
+
+    fun setSpringEffectScale(scale: Float) {
+        mSpringEffectScale = scale
+        springEffectProvider.updateSpringScale(mSpringEffectScale)
     }
 }

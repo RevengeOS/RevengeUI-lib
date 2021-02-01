@@ -1,7 +1,6 @@
 package com.revengeos.revengeui.effect
 
 import android.animation.ObjectAnimator
-import android.os.Handler
 import android.view.MotionEvent
 import android.view.View
 import androidx.dynamicanimation.animation.DynamicAnimation
@@ -25,6 +24,8 @@ class SpringEffectProvider {
     private var mIsPressed = false
     private var mLongPressed = false
     private var mIgnoreTouch = false
+
+    private var mSpringEffectScale = 1f
 
     private val longPressListener = Runnable {
         if (mIsPressed) {
@@ -70,8 +71,19 @@ class SpringEffectProvider {
             DAMPING_RATIO
         )
 
-        animatorX = ObjectAnimator.ofFloat(animateView, "scaleX", 1.0f, 0.9f)
-        animatorY = ObjectAnimator.ofFloat(animateView, "scaleY", 1.0f, 0.9f)
+        updateObjectAnimators()
+    }
+
+    public fun updateSpringScale(scale : Float) {
+        if (scale != mSpringEffectScale) {
+            mSpringEffectScale = scale
+            createAnimations()
+        }
+    }
+
+    private fun updateObjectAnimators() {
+        animatorX = ObjectAnimator.ofFloat(animateView, "scaleX", 1.0f, mSpringEffectScale)
+        animatorY = ObjectAnimator.ofFloat(animateView, "scaleY", 1.0f, mSpringEffectScale)
     }
 
     public fun addSpringEffect() {
