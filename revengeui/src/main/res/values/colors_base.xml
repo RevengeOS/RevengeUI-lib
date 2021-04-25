@@ -6,6 +6,8 @@
     <color name="revengeui_background_floating_dark">#2a2a2a</color>
     <color name="revengeui_background_floating_translucent_light">#aaffffff</color>
     <color name="revengeui_background_floating_translucent_dark">#90000000</color>
+    <color name="revengeui_background_disabled_translucent_light">#23000000</color>
+    <color name="revengeui_background_disabled_translucent_dark">#35ffffff</color>
     <color name="revengeui_color_primary_light">@color/revengeui_background_light</color>
     <color name="revengeui_color_primary_dark">@color/revengeui_background_dark</color>
     <color name="revengeui_color_primaryDark_light">@color/revengeui_background_light</color>
@@ -18,4 +20,6 @@
     <color name="revengeui_color_gradient_start_dark">#058fff</color>
     <color name="revengeui_color_gradient_end_light">#ff00ffd2</color>
     <color name="revengeui_color_gradient_end_dark">#ff00ffd2</color>
+    <color name="revengeui_color_text_primary_translucent_light">#c7000000</color>
+    <color name="revengeui_color_text_primary_translucent_dark">#ddffffff</color>
 </resources>

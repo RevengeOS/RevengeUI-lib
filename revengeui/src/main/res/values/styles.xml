@@ -21,6 +21,15 @@
         <item name="android:background">@drawable/revengeui_btn_borderless</item>
     </style>
 
+    <style name="Widget.RevengeUI.Button.Translucent" parent="Widget.AppCompat.Button">
+        <item name="springEffect">false</item>
+        <item name="android:textColor">?attr/textColorPrimaryTranslucent</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/revengeui_btn_translucent</item>
+    </style>
+
     <style name="Widget.RevengeUI.ImageButton" parent="Widget.AppCompat.ImageButton">
         <item name="springEffect">true</item>
     </style>
