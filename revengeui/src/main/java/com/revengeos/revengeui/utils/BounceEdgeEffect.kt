@@ -37,7 +37,7 @@ private const val FLING_TRANSLATION_MAGNITUDE = 0.15f
 /**
  * Replace edge effect by a bounce
  */
-class BounceEdgeEffect(context: Context, private val view: View, private val direction: Int) : EdgeEffect(context) {
+class BounceEdgeEffect(context: Context, private val view: View, private val direction: Int, private val useHardwareLayer: Boolean = true) : EdgeEffect(context) {
 
     val isHorizontal = direction == RecyclerView.EdgeEffectFactory.DIRECTION_RIGHT || direction == RecyclerView.EdgeEffectFactory.DIRECTION_LEFT
 
@@ -84,7 +84,12 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
         val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM || direction == RecyclerView.EdgeEffectFactory.DIRECTION_RIGHT) -1 else 1
         val translationVelocity = sign * velocity * FLING_TRANSLATION_MAGNITUDE
         translationAnim?.cancel()
-        translationAnim = createAnim().setStartVelocity(translationVelocity)?.also { it.start() }
+        translationAnim = createAnim().setStartVelocity(translationVelocity)?.also {
+            if (useHardwareLayer) {
+                view.setLayerType(View.LAYER_TYPE_HARDWARE, null)
+            }
+            it.start()
+        }
     }
 
     override fun draw(canvas: Canvas?): Boolean {
@@ -102,5 +107,9 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
                     .setFinalPosition(0f)
                     .setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY)
                     .setStiffness(SpringForce.STIFFNESS_LOW)
-            )
+            ).addEndListener { _, _, _, _ ->
+                if (useHardwareLayer) {
+                    view.setLayerType(View.LAYER_TYPE_NONE, null)
+                }
+            }
 }
