@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-import com.revengeos.uidemo.items.*
+import com.revengeos.uidemo.fragment.*
 
 class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
@@ -14,6 +14,7 @@ class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapte
             1 -> SlidersDemoFragment()
             2 -> LayoutTransitionDemoFragment()
             3 -> SwitchesDemoFragment()
+            4 -> RecyclerViewFragment.newInstance()
             else -> {
                 return ButtonsDemoFragment()
             }
@@ -21,7 +22,7 @@ class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapte
     }
 
     override fun getCount(): Int {
-        return 4;
+        return 5;
     }
 
     override fun getPageTitle(position: Int): CharSequence {
@@ -30,6 +31,7 @@ class DemoFragmentsPager(fragmentManager: FragmentManager) : FragmentPagerAdapte
             1 -> "Sliders"
             2 -> "Layout alpha transition"
             3 -> "Switches"
+            4 -> "Recycler view"
             else -> {
                 return "Buttons"
             }

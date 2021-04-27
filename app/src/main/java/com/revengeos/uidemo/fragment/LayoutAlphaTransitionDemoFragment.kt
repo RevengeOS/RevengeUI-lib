@@ -1,4 +1,4 @@
-package com.revengeos.uidemo.items
+package com.revengeos.uidemo.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

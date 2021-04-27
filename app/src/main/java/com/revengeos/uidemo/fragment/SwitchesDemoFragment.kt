@@ -1,4 +1,4 @@
-package com.revengeos.uidemo.items
+package com.revengeos.uidemo.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 
 import com.revengeos.uidemo.R
 
-class ButtonsDemoFragment : Fragment() {
+class SwitchesDemoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -16,6 +16,6 @@ class ButtonsDemoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.buttons_demo, container, false)
+        return inflater.inflate(R.layout.switches_demo, container, false)
     }
 }
