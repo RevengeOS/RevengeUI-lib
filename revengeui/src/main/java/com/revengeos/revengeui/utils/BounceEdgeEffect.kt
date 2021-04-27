@@ -57,7 +57,7 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
 
         // Translate the recyclerView with the distance
         val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM) -1 else 1
-        val translationYDelta = sign * view.width * deltaDistance * OVERSCROLL_TRANSLATION_MAGNITUDE
+        val translationYDelta = sign * view.width * deltaDistance.absoluteValue * OVERSCROLL_TRANSLATION_MAGNITUDE
         view.translationY += translationYDelta
 
         translationAnim?.cancel()
