@@ -39,6 +39,8 @@ private const val FLING_TRANSLATION_MAGNITUDE = 0.15f
  */
 class BounceEdgeEffect(context: Context, private val view: View, private val direction: Int) : EdgeEffect(context) {
 
+    val isHorizontal = direction == RecyclerView.EdgeEffectFactory.DIRECTION_RIGHT || direction == RecyclerView.EdgeEffectFactory.DIRECTION_LEFT
+
     // A reference to the [SpringAnimation] for this RecyclerView used to bring the item back after the over-scroll effect.
     var translationAnim: SpringAnimation? = null
 
@@ -56,9 +58,13 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
         // This is called on every touch event while the list is scrolled with a finger.
 
         // Translate the recyclerView with the distance
-        val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM) -1 else 1
-        val translationYDelta = sign * view.width * deltaDistance.absoluteValue * OVERSCROLL_TRANSLATION_MAGNITUDE
-        view.translationY += translationYDelta
+        val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM || direction == RecyclerView.EdgeEffectFactory.DIRECTION_RIGHT) -1 else 1
+        val translationDelta = sign * view.width * deltaDistance.absoluteValue * OVERSCROLL_TRANSLATION_MAGNITUDE
+        if (isHorizontal) {
+            view.translationX += translationDelta
+        } else {
+            view.translationY += translationDelta
+        }
 
         translationAnim?.cancel()
     }
@@ -66,7 +72,7 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
     override fun onRelease() {
         super.onRelease()
         // The finger is lifted. Start the animation to bring translation back to the resting state.
-        if (view.translationY != 0f) {
+        if ((view.translationY != 0f && !isHorizontal) || (view.translationX != 0f && isHorizontal)) {
             translationAnim = createAnim()?.also { it.start() }
         }
     }
@@ -75,7 +81,7 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
         super.onAbsorb(velocity)
 
         // The list has reached the edge on fling.
-        val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM) -1 else 1
+        val sign = if (direction == RecyclerView.EdgeEffectFactory.DIRECTION_BOTTOM || direction == RecyclerView.EdgeEffectFactory.DIRECTION_RIGHT) -1 else 1
         val translationVelocity = sign * velocity * FLING_TRANSLATION_MAGNITUDE
         translationAnim?.cancel()
         translationAnim = createAnim().setStartVelocity(translationVelocity)?.also { it.start() }
@@ -91,7 +97,7 @@ class BounceEdgeEffect(context: Context, private val view: View, private val dir
         return translationAnim?.isRunning?.not() ?: true
     }
 
-    private fun createAnim() = SpringAnimation(view, SpringAnimation.TRANSLATION_Y)
+    private fun createAnim() = SpringAnimation(view, if (isHorizontal) SpringAnimation.TRANSLATION_X else SpringAnimation.TRANSLATION_Y)
             .setSpring(SpringForce()
                     .setFinalPosition(0f)
                     .setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY)
