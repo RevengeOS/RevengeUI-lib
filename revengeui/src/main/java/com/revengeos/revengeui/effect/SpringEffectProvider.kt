@@ -25,7 +25,7 @@ class SpringEffectProvider {
     private var mLongPressed = false
     private var mIgnoreTouch = false
 
-    private var mSpringEffectScale = 1f
+    private var mSpringEffectScale = 0.9f
 
     private val longPressListener = Runnable {
         if (mIsPressed) {
