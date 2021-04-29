@@ -17,7 +17,10 @@
 android_library {
     name: "RevengeUI-lib",
     resource_dirs: ["res"],
-    srcs: ["java/**/*.kt"],
+    srcs: [
+        "java/**/*.kt",
+        "java/**/*.java"
+        ],
     static_libs: [
         "androidx.appcompat_appcompat",
         "androidx.dynamicanimation_dynamicanimation",
